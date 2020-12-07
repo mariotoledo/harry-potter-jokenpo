@@ -51,7 +51,7 @@
 
             if(myChoice === opponentChoice) {
                 $('#gamelog').append('<p>You got a draw. Fuck you both.</p>')
-            } else if((myChoice == spells.length && opponentChoice == 0) || opponentChoice > myChoice) {
+            } else if((myChoice == spells.length - 1 && opponentChoice == 0) || opponentChoice > myChoice) {
                 $('#gamelog').append('<p>You won, congrats. Now get back to work.</p>')
             } else {
                 $('#gamelog').append('<p>You lost you piece of shit.</p>')
