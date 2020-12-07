@@ -1,7 +1,11 @@
 <!doctype html>
 <html lang="en">
-
     <head>
+        <!-- 
+            Developed by Mario Toledo: http://mariotoledo.me/
+            Art and Concept by Daniel Klava: https://www.instagram.com/klavarts
+        -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Harry Potter Jo-Ken-Po</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
             integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
@@ -46,6 +50,20 @@
                 float: left;
                 z-index: 1;
             }
+
+            .button-container {
+                padding: 20px;
+            }
+
+            .button-container button {
+                width: 100%;
+            }
+
+            .credits {
+                font-size: 10px;
+                text-align: center;
+                margin-bottom: 10px;
+            }
         </style>
     </head>
 
@@ -54,16 +72,20 @@
         <div class="container" id="gamelog">
             <p>You are being faced by the Dark Lord, an has only one spell to use. Expelliarmus beats Avada Kedavra, that beats Alorromora, that beats Expelliarmus. Choose carefully:</p>
             <div class="row">
-                <div class="col-sm">
+                <div class="col-sm button-container">
                     <button class="btn btn-danger" type="button" onclick="chooseSpell(0)">Expelliarmus</button>
                 </div>
-                <div class="col-sm">
+                <div class="col-sm button-container">
                     <button class="btn btn-success" type="button"  onclick="chooseSpell(1)">Avada Kedavra</button>
                 </div>
-                <div class="col-sm">
+                <div class="col-sm button-container">
                     <button class="btn btn-warning" type="button"  onclick="chooseSpell(2)">Alorromora</button>
                 </div>
             </div>
+        </div>
+        <div class="credits">
+            Art and Concept by <a href="https://www.instagram.com/klavarts">Daniel Klava</a><br/>
+            Developed by <a href="http://mariotoledo.me/">Mario Toledo</a>
         </div>
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
@@ -94,8 +116,11 @@
                 } else {
                     $('#gamelog').append('<p>You lost you piece of shit.</p>')
                 }
+
+                $([document.documentElement, document.body]).animate({
+                    scrollTop: $("#gamelog").offset().top
+                }, 1000);
             }
         </script>
     </body>
-
 </html>
