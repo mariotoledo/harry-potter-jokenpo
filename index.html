@@ -1,64 +1,63 @@
 <!doctype html>
 <html lang="en">
 
-<head>
-    <title>Harry Potter Jo-Ken-Po</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-    
-    <style>
-        body {
-            background-color: '#000000';
-            color: '#FFFFFF'
-        }
+    <head>
+        <title>Harry Potter Jo-Ken-Po</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+        
+        <style>
+            body {
+                background-color: #000000;
+                color: #FFFFFF
+            }
 
-        p { margin-top: 20px; }
-    </style>
-</head>
+            p { margin-top: 20px; }
+        </style>
+    </head>
 
-<body>
-    <div class="container" id="gamelog">
-        <p>You are being faced by the Dark Lord, an has only one spell to use. Expelliarmus beats Avada Kedavra, that beats Alorromora, that beats Expelliarmus. Choose carefully:</p>
-        <div class="row">
-            <div class="col-sm">
-                <button class="btn btn-danger" type="button" onclick="chooseSpell(0)">Expelliarmus</button>
-            </div>
-            <div class="col-sm">
-                <button class="btn btn-success" type="button"  onclick="chooseSpell(1)">Avada Kedavra</button>
-            </div>
-            <div class="col-sm">
-                <button class="btn btn-warning" type="button"  onclick="chooseSpell(2)">Alorromora</button>
+    <body>
+        <div class="container" id="gamelog">
+            <p>You are being faced by the Dark Lord, an has only one spell to use. Expelliarmus beats Avada Kedavra, that beats Alorromora, that beats Expelliarmus. Choose carefully:</p>
+            <div class="row">
+                <div class="col-sm">
+                    <button class="btn btn-danger" type="button" onclick="chooseSpell(0)">Expelliarmus</button>
+                </div>
+                <div class="col-sm">
+                    <button class="btn btn-success" type="button"  onclick="chooseSpell(1)">Avada Kedavra</button>
+                </div>
+                <div class="col-sm">
+                    <button class="btn btn-warning" type="button"  onclick="chooseSpell(2)">Alorromora</button>
+                </div>
             </div>
         </div>
-    </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
-        integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
-        crossorigin="anonymous"></script>
-    <script>
-        const spells = ['Expelliarmus', 'Avada Kedavra', 'Alorromora']
-        function chooseSpell(myChoice) {
-            $('button').prop('disabled', true)
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+            integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+            crossorigin="anonymous"></script>
+        <script>
+            const spells = ['Expelliarmus', 'Avada Kedavra', 'Alorromora']
+            function chooseSpell(myChoice) {
+                $('button').prop('disabled', true)
 
-            $('#gamelog').append('<p>You chose ' + spells[myChoice] + '</p>')
+                $('#gamelog').append('<p>You chose ' + spells[myChoice] + '</p>')
 
-            let opponentChoice = Math.floor(Math.random() * spells.length)
+                let opponentChoice = Math.floor(Math.random() * spells.length)
 
-            $('#gamelog').append('<p>Your opponent chose ' + spells[opponentChoice] + '</p>')
+                $('#gamelog').append('<p>Your opponent chose ' + spells[opponentChoice] + '</p>')
 
-            if(myChoice === opponentChoice) {
-                $('#gamelog').append('<p>You got a draw. Fuck you both.</p>')
-            } else if((myChoice == spells.length - 1 && opponentChoice == 0) || opponentChoice > myChoice) {
-                $('#gamelog').append('<p>You won, congrats. Now get back to work.</p>')
-            } else {
-                $('#gamelog').append('<p>You lost you piece of shit.</p>')
+                if(myChoice === opponentChoice) {
+                    $('#gamelog').append('<p>You got a draw. Fuck you both.</p>')
+                } else if((myChoice == spells.length - 1 && opponentChoice == 0) || opponentChoice > myChoice) {
+                    $('#gamelog').append('<p>You won, congrats. Now get back to work.</p>')
+                } else {
+                    $('#gamelog').append('<p>You lost you piece of shit.</p>')
+                }
             }
-        }
-        let 
-    </script>
-</body>
+        </script>
+    </body>
 
 </html>
