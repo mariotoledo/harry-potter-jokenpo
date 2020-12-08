@@ -70,7 +70,7 @@
     <body>
         <div id="bg"></div>
         <div class="container" id="gamelog">
-            <p>You are being faced by the Dark Lord, an has only one spell to use. Expelliarmus beats Avada Kedavra, that beats Alorromora, that beats Expelliarmus. Choose carefully:</p>
+            <p>You are being faced by the Dark Lord, an has only one spell to use. Expelliarmus beats Avada Kedavra, that beats Alohomora, that beats Expelliarmus. Choose carefully:</p>
             <div class="row">
                 <div class="col-sm button-container">
                     <button class="btn btn-danger" type="button" onclick="chooseSpell(0)">Expelliarmus</button>
@@ -79,7 +79,7 @@
                     <button class="btn btn-success" type="button"  onclick="chooseSpell(1)">Avada Kedavra</button>
                 </div>
                 <div class="col-sm button-container">
-                    <button class="btn btn-warning" type="button"  onclick="chooseSpell(2)">Alorromora</button>
+                    <button class="btn btn-warning" type="button"  onclick="chooseSpell(2)">Alohomora</button>
                 </div>
             </div>
         </div>
@@ -95,7 +95,7 @@
             integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
             crossorigin="anonymous"></script>
         <script>
-            const spells = ['Expelliarmus', 'Avada Kedavra', 'Alorromora']
+            const spells = ['Expelliarmus', 'Avada Kedavra', 'Alohomora']
             function chooseSpell(myChoice) {
                 $('button').prop('disabled', true)
 
@@ -117,9 +117,7 @@
                     $('#gamelog').append('<p>You lost you piece of shit.</p>')
                 }
 
-                $([document.documentElement, document.body]).animate({
-                    scrollTop: $("#gamelog").offset().top
-                }, 1000);
+                $("html, body").animate({ scrollTop: $(document).height()-$(window).height() });
             }
         </script>
     </body>
